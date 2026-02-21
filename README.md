@@ -13,20 +13,22 @@ O projeto foi estruturado seguindo o padrão arquitetural **MVC (Model-View-Cont
 ├── 📁 src
 │   ├── 📁 model         # Classes de domínio e interfaces
 │   ├── 📁 view          # Classes responsáveis pela interface no terminal
-│   ├── 📁 controller    # Lógica de controle e regras de negócio
+│   ├── 📁 controller    # Lógica de controle
+│   ├── 📁 data          # Dados mockados para imprimir as listas pré-cadastradas
+│   ├── Main.groovy      # Classe main para iniciar o programa
 ├── 📄 README.md         # Documentação principal
 ```
 
 ## Como executar o código
-Para rodar a aplicação, é necessário ter o ambiente Groovy (Groovy Version: 4.0.30 JVM: 17.0.18) configurado na sua máquina.
+Para rodar a aplicação, é necessário ter o ambiente Groovy (Groovy Version: 4.0.14 JVM: 21.0.10) configurado na sua máquina.
 
 1. Clone o repositório para o seu ambiente local:
    ```bash
-   git clone [https://github.com/Escarletx/linketinder.git](https://github.com/Escarletx/linketinder)
+   git clone https://github.com/Escarletx/linketinder
    ```
 2. Navegue até a pasta de código-fonte do projeto:
    ```bash
-   cd linketinder/src/com/escarlet/linketinder/view
+   cd linketinder/src/com/escarlet/linketinder/
    ```
 3. Execute o arquivo principal utilizando o Groovy:
    ```bash
@@ -41,13 +43,13 @@ Para rodar a aplicação, é necessário ter o ambiente Groovy (Groovy Version: 
 * **CLI (Command Line Interface):** Interação e apresentação dos dados inteiramente via terminal.
 
 ## Comentários sobre a solução
-A solução foi desenhada aplicando os conceitos de Orientação a Objetos em conjunto com a arquitetura MVC. Foi criada uma interface base `Pessoa` que define os comportamentos gerais, sendo implementada/estendida por `Candidato` (representando Pessoa Física) e `Empresa` (representando Pessoa Jurídica). A utilização do padrão MVC garante que a lógica de apresentação (CLI) não se misture com as regras de negócio ou com as estruturas de dados.
+A solução foi desenhada aplicando os conceitos de Orientação a Objetos em conjunto com a arquitetura MVC. Foi criada uma interface base `User` que define os comportamentos gerais, sendo implementada/estendida por `Candidato` (representando Pessoa Física) e `Empresa` (representando Pessoa Jurídica). A utilização do padrão MVC garante que a lógica de apresentação (CLI) não se misture com as regras de negócio ou com as estruturas de dados.
 
-Para cumprir os requisitos do MVP inicial, o sistema inicia com listas estáticas de 5 candidatos e 5 empresas pré-cadastradas em memória, contendo seus respectivos atributos básicos e uma lista de competências técnicas (ex: Python, Java, Groovy). O menu interativo no terminal permite listar e validar a consistência desses dados antes de avançarmos para regras mais complexas de interação.
+Para cumprir os requisitos do MVP inicial, o sistema inicia com listas estáticas de 5 candidatos e 5 empresas pré-cadastradas no arquivo MockData, contendo seus respectivos atributos básicos e uma lista de competências técnicas. O menu interativo no terminal permite listar e validar a consistência desses dados antes de avançarmos para regras mais complexas de interação.
 
 ## Próximos passos
 Como o projeto está em evolução contínua (MVP), as próximas tarefas técnicas mapeadas no backlog incluem:
-- [ ] Implementar a funcionalidade opcional de cadastro interativo de novos candidatos e empresas via CLI.
+- [ ] Implementar a funcionalidade de cadastro interativo de novos candidatos e empresas via CLI.
 - [ ] Criar um sistema de autenticação (login) simples para separar a visão e as ações de "Candidato" e "Empresa".
 - [ ] Estruturar a entidade "Vaga", associando-a a uma empresa de forma anônima para o mercado.
 - [ ] Desenvolver a mecânica de "Curtidas": permitir que o candidato curta uma vaga anônima e a empresa visualize a lista de interessados.
