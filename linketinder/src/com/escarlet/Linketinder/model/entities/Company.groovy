@@ -9,14 +9,15 @@ class Company extends User{
         return """
         +-------------------------------------------+
         | ID: %d
-        | name: %s
+        | Nome: %s
         | E-mail: %s
-        | cep: %s
-        | state: %s
-        | county: %s
+        | CNPJ: %s
+        | Pais: %s
+        | Estado: %s
+        | Cep: %s
         | Descrição: %s
         | Competências: %s
         +-------------------------------------------+
-        """.stripIndent().formatted(null, name, email, cep, state, county, description, competences)
+        """.stripIndent().formatted(id, name, email, cnpj, county, state, cep, description, competences)
     }
 }

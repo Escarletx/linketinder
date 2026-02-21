@@ -68,7 +68,8 @@ class MockData {
                         county: "Brasil",
                         state: "GO",
                         cep: "02000-000",
-                        description: "A ZG Soluções é uma empresa referência no desenvolvimento de sistemas para a gestão automatizada do ciclo de recebíveis de hospitais, clínicas e laboratórios"
+                        description: "A ZG Soluções é uma empresa referência no desenvolvimento de sistemas para a gestão automatizada do ciclo de recebíveis de hospitais, clínicas e laboratórios",
+                        competences: ["Java", "Groovy", "Git", "Linux"]
                 ),
                 new Company(
                         name: "Acelera ZG",
@@ -77,7 +78,8 @@ class MockData {
                         county: "Brasil",
                         state: "GO",
                         cep: "74000-000",
-                        description: "O Acelera ZG é um treinamento 100% online e gratuito para estudantes de tecnologia que querem desbloquear seu próximo nível no mundo da programação"
+                        description: "O Acelera ZG é um treinamento 100% online e gratuito para estudantes de tecnologia que querem desbloquear seu próximo nível no mundo da programação",
+                        competences: ["Java", "Groovy", "Git", "Linux"]
                 ),
                 new Company(
                         name: "Tech Solutions",
@@ -86,7 +88,8 @@ class MockData {
                         county: "Brasil",
                         state: "SP",
                         cep: "04538-132",
-                        description: "Consultoria especializada em transformação digital e outsourcing de TI."
+                        description: "Consultoria especializada em transformação digital e outsourcing de TI.",
+                        competences: ["Java", "Groovy", "Git", "Linux"]
                 ),
                 new Company(
                         name: "FinBank Digital",
@@ -95,7 +98,8 @@ class MockData {
                         county: "Brasil",
                         state: "PR",
                         cep: "80020-010",
-                        description: "Banco digital focado em soluções de crédito para microempreendedores."
+                        description: "Banco digital focado em soluções de crédito para microempreendedores.",
+                        competences: ["Java", "Groovy", "Git", "Linux"]
                 ),
                 new Company(
                         name: "Inova Tech",
@@ -104,7 +108,8 @@ class MockData {
                         county: "Brasil",
                         state: "RS",
                         cep: "90010-001",
-                        description: "Startup de IA voltada para otimização de logística e transporte de carga."
+                        description: "Startup de IA voltada para otimização de logística e transporte de carga.",
+                        competences: ["Java", "Groovy", "Git", "Linux"]
                 )
         ]
 

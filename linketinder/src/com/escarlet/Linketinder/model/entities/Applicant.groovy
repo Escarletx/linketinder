@@ -9,14 +9,15 @@ class Applicant extends User{
         return """
         +-------------------------------------------+
         | ID: %d
-        | name: %s
+        | Nome: %s
         | E-mail: %s
+        | CPF: %s
         | Idade: %d
-        | state: %s
-        | cep: %s
+        | Estado: %s
+        | Cep: %s
         | Descrição: %s
         | Competências: %s
         +-------------------------------------------+
-           """.stripIndent().formatted(null, name, email, age, state, cep, description, competences)
+        """.stripIndent().formatted(id, name, email, cpf, age, state, cep, description, competences)
     }
 }
