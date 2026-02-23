@@ -1,8 +1,13 @@
 package com.escarlet.Linketinder.model.entities
 
 class Company extends User{
+    private static int counter = 1
     String cnpj
     String county
+
+    Company() {
+        this.id = counter++
+    }
 
     @Override
     String toString() {

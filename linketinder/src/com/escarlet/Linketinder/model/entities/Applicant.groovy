@@ -1,8 +1,13 @@
 package com.escarlet.Linketinder.model.entities
 
 class Applicant extends User{
+    private static int counter = 1
     String cpf
     int age
+
+    Applicant() {
+        this.id = counter++
+    }
 
     @Override
     String toString() {

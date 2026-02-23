@@ -22,18 +22,16 @@ class ApplicantControllerTest {
     @Test
     void "Deve adicionar um novo candidato a lista com sucesso"() {
         int initSize = controller.list().size()
-
-        def applicantMock = new Applicant(
-                name: "Candidato1",
-                email: "candidato1@email.com",
-                cpf: "032.123.332-43",
-                age: 26,
-                state: "SP",
-                cep: "8300-127",
-                description: "Estudante de Engenharia de software focada em backend.",
-                competences: ["Groovy", "Git", "Linux"]
+        controller.register(
+                "Candidato1",
+                "candidato1@email.com",
+                "032.123.332-43",
+                26,
+                "SP",
+                "8300-127",
+                "Testando inserção",
+                ["Groovy", "Testes"]
         )
-        controller.register(applicantMock)
 
         assertEquals(initSize + 1, controller.list().size())
         assertTrue(controller.list().contains(applicantMock))
