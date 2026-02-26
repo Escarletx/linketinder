@@ -3,7 +3,6 @@ package com.escarlet.Linketinder.controller
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.BeforeEach
 import static org.junit.jupiter.api.Assertions.*
-import com.escarlet.Linketinder.model.entities.Applicant
 
 class ApplicantControllerTest {
     private ApplicantController controller
