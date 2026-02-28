@@ -1,18 +1,16 @@
 package com.escarlet.Linketinder.view
 
-import com.escarlet.Linketinder.model.entities.Company
 import com.escarlet.Linketinder.view.helpers.InputReader
-import com.escarlet.Linketinder.controller.CompanyController
 
 class MenuCLI {
     private InputReader inputReader
     private ApplicantView applicantView
-    private CompanyController companyController
+    private CompanyView companyView
 
     MenuCLI() {
         this.inputReader = new InputReader()
         this.applicantView = new ApplicantView()
-        this.companyController = new CompanyController()
+        this.companyView = new CompanyView()
     }
 
     void init() {
@@ -28,29 +26,23 @@ class MenuCLI {
 
             switch (option) {
             case "1":
-                applicantView.listApplicants()
+                applicantView.list()
                 break
             case "2":
-                listCompany()
+                companyView.list()
                 break
             case "3":
-                applicantView.registerApplicant()
+                applicantView.register()
                 break
             case "4":
+                companyView.register()
+                break
+            case "5":
                 println "\n Encerrado programa."
                 return
             default:
                 println "\n Opção inválida. Digite apenas as opções disponíveis no menu."
             }
-        }
-    }
-
-    private void listCompany() {
-        println "\n"+ "="*20 + "\n Lista de Empresas \n" + "="*20
-        List<Company> companies = this.companyController.list()
-
-        companies.each { c ->
-            print c
         }
     }
 }
