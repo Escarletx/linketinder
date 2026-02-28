@@ -47,9 +47,12 @@ A solução foi desenhada aplicando os conceitos de Orientação a Objetos em co
 
 Para cumprir os requisitos do MVP inicial, o sistema inicia com listas estáticas de 5 candidatos e 5 empresas pré-cadastradas no arquivo MockData, contendo seus respectivos atributos básicos e uma lista de competências técnicas. O menu interativo no terminal permite listar e validar a consistência desses dados antes de avançarmos para regras mais complexas de interação.
 
+## Atualizações
+- [X] Implementar a funcionalidade de cadastro de novos candidatos e empresas via CLI.
+
 ## Próximos passos
 Como o projeto está em evolução contínua (MVP), as próximas tarefas técnicas mapeadas no backlog incluem:
-- [ ] Implementar a funcionalidade de cadastro interativo de novos candidatos e empresas via CLI.
+
 - [ ] Criar um sistema de autenticação (login) simples para separar a visão e as ações de "Candidato" e "Empresa".
 - [ ] Estruturar a entidade "Vaga", associando-a a uma empresa de forma anônima para o mercado.
 - [ ] Desenvolver a mecânica de "Curtidas": permitir que o candidato curta uma vaga anônima e a empresa visualize a lista de interessados.
