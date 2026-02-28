@@ -8,7 +8,7 @@ class ApplicantView {
     private InputReader inputReader
     private ApplicantController controller
 
-    ApplicantView(InputReader inputReader, ApplicantController controller) {
+    ApplicantView(ApplicantController controller, InputReader inputReader) {
         this.inputReader = inputReader
         this.controller = controller
     }
