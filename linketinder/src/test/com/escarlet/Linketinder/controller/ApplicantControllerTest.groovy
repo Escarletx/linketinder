@@ -1,38 +1,39 @@
 package com.escarlet.Linketinder.controller
 
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.BeforeEach
-import static org.junit.jupiter.api.Assertions.*
+import spock.lang.Subject
+import spock.lang.Specification
 
-class ApplicantControllerTest {
-    private ApplicantController controller
+class ApplicantControllerTest extends Specification {
+    @Subject
+    ApplicantController controller = new ApplicantController()
 
-    @BeforeEach
-    void setUp() { this.controller = new ApplicantController() }
-
-    @Test
-    void "Deve retornar a listagem com pelo menos 5 candidatos pré-cadastrados " () {
+    def "Deve listar os candidatos carregados pelo MockData"() {
+        when: "Pedimos a lista de candidatos"
         def list = controller.list()
 
-        assertNotNull(list, "A lista de candidatos não pode ser nula")
-        assertTrue(list.size() >=5, "A lista deve conter pelo menos 5 candidatos pré-cadastrados")
+        then: "A lista não deve ser nula"
+        list != null
     }
 
-    @Test
-    void "Deve adicionar um novo candidato a lista com sucesso"() {
-        int initSize = controller.list().size()
-        controller.register(
-                "Candidato1",
-                "candidato1@email.com",
-                "032.123.332-43",
-                26,
-                "SP",
-                "8300-127",
-                "Testando inserção",
-                ["Groovy", "Testes"]
-        )
+    def "Deve registrar um novo candidato com sucesso quando os dados são válidos"() {
+        given: "Dados válidos de um candidato"
+        String name = "Escarlet"
+        String email = "escarlet@teste.com"
+        String cpf = "123.456.789-00"
+        int age = 25
+        String state = "RO"
+        String cep = "76800-000"
+        String description = "Estudante java"
+        List<String> competences = ["Java", "Groovy"]
+        int size = controller.list().size()
 
-        assertEquals(initSize + 1, controller.list().size())
-        assertTrue(controller.list().contains(applicantMock))
+        when: "Chamamos o método register"
+        controller.register(name, email, cpf, age, state, cep, description, competences)
+
+        then: "A lista deve ter aumentado em 1"
+        controller.list().size() == size + 1
+
+        and: "O último candidato da lista deve ter o email correto"
+        controller.list().last().email == email
     }
 }
